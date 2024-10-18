@@ -1,2 +1,6 @@
 1- what does the Side do? flex:1; --> in Header.js
 2- when wouldn't the justify-items and align-items have effect?
+
+PICK UP FROM:
+    EX3: leftColumn -> hidden , while breadcrumbs exist above title, change markup?
+    EX1: i should use the dialog component so it's more accessible.

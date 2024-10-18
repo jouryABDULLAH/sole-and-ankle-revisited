@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { WEIGHTS } from '../../constants';
+import { QUERIES, WEIGHTS } from '../../constants';
 
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
@@ -47,6 +47,10 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: baseline;
   gap: 32px;
+
+  @media(${QUERIES.tabletAndDown}){
+    position: relative;
+  }
 `;
 
 const LeftColumn = styled.div`
@@ -61,6 +65,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+
 `;
 
 const Title = styled.h2`
