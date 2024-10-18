@@ -1,0 +1,2 @@
+1- what does the Side do? flex:1; --> in Header.js
+2- when wouldn't the justify-items and align-items have effect?
