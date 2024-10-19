@@ -14,6 +14,13 @@ const ShoeIndex = ({ sortId, setSortId }) => {
     <Wrapper>
       <MainColumn>
         <Header>
+          <MobileBreadcrumbs>
+            <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+            <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+            <Breadcrumbs.Crumb href="/sale/shoes">
+              Shoes
+            </Breadcrumbs.Crumb>
+          </MobileBreadcrumbs>
           <Title>Running</Title>
           <Select
             label="Sort"
@@ -55,6 +62,10 @@ const Wrapper = styled.div`
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
+
+  @media (${QUERIES.tabletAndDown}){
+    display: none;
+  }
 `;
 
 const MainColumn = styled.div`
@@ -66,11 +77,25 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: baseline;
 
+  @media (${QUERIES.tabletAndDown}){
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 1.5rem;
-  font-weight: ${WEIGHTS.medium};
+  font-weight: var(--weight-medium);
 `;
 
+const MobileBreadcrumbs = styled(Breadcrumbs)`
+
+  display: none;
+
+  @media (${QUERIES.tabletAndDown}){
+    
+    display: flex;
+    margin-bottom: -0.1rem;
+  }
+  
+`;
 export default ShoeIndex;

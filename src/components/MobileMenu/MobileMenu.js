@@ -5,61 +5,56 @@ import { DialogOverlay, DialogContent } from '@reach/dialog';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
-import { COLORS, WEIGHTS } from '../../constants';
+import { QUERIES } from '../../constants';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  if (!isOpen) {
-    return null;
-  }
+
 
   return (
-    <Overlay>
-        <Menu>
-        <UnstyledButton onClick={onDismiss}>
-          <Icon id="close" strokeWidth={1} >
-            Dismiss menu
-          </Icon>
-        </UnstyledButton>
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
-        <Footer>
-          <FooterLink href="/terms">Terms and Conditions</FooterLink>
-          <FooterLink href="/privacy">Privacy Policy</FooterLink>
-          <FooterLink href="/contact">Contact Us</FooterLink>
-        </Footer>
+    <Overlay isOpen={isOpen} onDismiss={onDismiss}>
+        <Menu aria-label='menu'>
+          <UnstyledButton onClick={onDismiss}>
+            <Icon id="close" strokeWidth={1} >
+              Dismiss menu
+            </Icon>
+          </UnstyledButton>
+          <Nav>
+            <NavLink href="/sale">Sale</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
+          </Nav>
+          <Footer>
+            <FooterLink href="/terms">Terms and Conditions</FooterLink>
+            <FooterLink href="/privacy">Privacy Policy</FooterLink>
+            <FooterLink href="/contact">Contact Us</FooterLink>
+          </Footer>
       </Menu>
     </Overlay>
     
   );
 };
 
-const Overlay = styled.div`
+const Overlay = styled(DialogOverlay)`
   position: fixed;
   inset: 0;
   background-color: rgba(0,0,0,0.5);
   height: 100%;
   width: 100%;
-  z-index: 999;
+  display: flex;
+  justify-content: end;
 `;
 
-const Menu = styled.div`
+const Menu = styled(DialogContent)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  right:0;
-  bottom: 0;
+  
   width: 300px;
   height: 100%;
-  background-color: white;
-  z-index: 999999;
+  background-color: var(--white);
   padding: calc( ${16} / ${16} * ${1}rem);
 
   & > button {
@@ -78,11 +73,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--gray-900);
+  font-weight: var(--weight-medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--secondary);
   }
 `;
 
@@ -96,7 +91,7 @@ const FooterLink = styled.a`
   color: grey;
   font-size: 1rem;
   text-decoration: none;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: var(--weight-normal);
   gap: calc(${4} / ${16} * ${1}rem);
 `;
 export default MobileMenu;
