@@ -14,14 +14,16 @@ const ShoeIndex = ({ sortId, setSortId }) => {
     <Wrapper>
       <MainColumn>
         <Header>
-          <MobileBreadcrumbs>
-            <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
-            <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
-            <Breadcrumbs.Crumb href="/sale/shoes">
-              Shoes
-            </Breadcrumbs.Crumb>
-          </MobileBreadcrumbs>
-          <Title>Running</Title>
+          <div>
+            <MobileBreadcrumbs>
+              <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+              <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+              <Breadcrumbs.Crumb href="/sale/shoes">
+                Shoes
+              </Breadcrumbs.Crumb>
+            </MobileBreadcrumbs>
+            <Title>Running</Title>
+          </div>
           <Select
             label="Sort"
             value={sortId}
@@ -78,7 +80,7 @@ const Header = styled.header`
   align-items: baseline;
 
   @media (${QUERIES.tabletAndDown}){
-    flex-direction: column;
+    align-items: flex-end;
   }
 `;
 

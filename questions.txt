@@ -5,3 +5,4 @@ PICK UP FROM:
     set up NGROK
     EX3: leftColumn -> hidden , while breadcrumbs exist above title, change markup?
     EX1: i should use the dialog component so it's more accessible.
+    EX6: background gradient not applied.
